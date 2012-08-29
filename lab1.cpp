@@ -3,23 +3,21 @@
 using std::cout;
 using std::endl;
 
-int euler(int n);    //usually declare this in the header file.
+int euler(int n, int x, int y);    //usually declare this in the header file.
 
 int main() {
   cout<<"Hello World\n";
-  cout<<"Result::"<<euler(2000)<<endl;
+  cout<<"Result::"<<euler(1000,3,5)<<endl;
   return 0;
 }
 
-int euler(int n) {
-  cout << "hello paraemter: " << n << endl;
-
+int euler(int n, int x, int y) {
   int sum = 0;
-  bool mod7 = 0,mod5 = 0;
+  bool modx = 0,mody = 0;
   for(int i = 0; i < n; ++i) {
-    mod7 = !(i%7==0);
-    mod5 = !(i%5==0);
-    if((mod7^mod5) == 1) {
+    modx = !(i%x==0);
+    mody = !(i%y==0);
+    if((modx^mody) == 1) {
        sum += i;
     }
   }
