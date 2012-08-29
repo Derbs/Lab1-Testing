@@ -15,9 +15,13 @@ int euler(int n) {
   cout << "hello paraemter: " << n << endl;
 
   int sum = 0;
-  
+  bool mod7 = 0,mod5 = 0;
   for(int i = 0; i < n; ++i) {
-    sum += i;
+    mod7 = !(i%7==0);
+    mod5 = !(i%5==0);
+    if((mod7^mod5) == 1) {
+       sum += i;
+    }
   }
   return sum;
 }
